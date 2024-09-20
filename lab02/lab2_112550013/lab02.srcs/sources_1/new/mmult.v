@@ -72,7 +72,7 @@ always @(posedge clk or negedge reset_n) begin
             C[i*3+j] <= temp; 
         end
         counter <= counter + 1;
-//        C_mat <= {C[0], C[1], C[2], C[3], C[4], C[5], C[6], C[7], C[8]};
+        C_mat <= {C[0], C[1], C[2], C[3], C[4], C[5], C[6], C[7], C[8]};
     end
     
     if (counter==3) begin
