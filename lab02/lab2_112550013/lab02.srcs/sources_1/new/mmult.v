@@ -45,21 +45,21 @@ assign valid = flg;
 
 always @(posedge clk or negedge reset_n) begin
     if (~reset_n) begin
-        counter <= 0;
+        counter = 0;
         flg = 0;
         for (i = 0; i < 9; i = i + 1) begin
-            A[i] <= 0;
-            B[i] <= 0;
-            C[i] <= 0;
+            A[i] = 0;
+            B[i] = 0;
+            C[i] = 0;
         end 
     end
     else if(enable !== 1) begin
         counter <= 0;
         for (i = 0; i < 9; i = i + 1) begin
             j = (i * 8);
-            A[i] <= A_mat[j +: 8];
-            B[i] <= B_mat[j +: 8];
-            C[i] <= 0;
+            A[i] = A_mat[j +: 8];
+            B[i] = B_mat[j +: 8];
+            C[i] = 0;
         end 
     end
     else if (enable & ~(counter==3)) begin
@@ -69,14 +69,13 @@ always @(posedge clk or negedge reset_n) begin
             for (k = 0; k < 3; k = k + 1) begin
                 temp = temp + (A[i*3+k] * B[k*3+j]); 
             end
-            C[i*3+j] <= temp; 
+            C[i*3+j] = temp; 
         end
-        counter <= counter + 1;
-        C_mat <= {C[0], C[1], C[2], C[3], C[4], C[5], C[6], C[7], C[8]};
+        counter = counter + 1;
+        C_mat = {C[0], C[1], C[2], C[3], C[4], C[5], C[6], C[7], C[8]};
     end
     
     if (counter==3) begin
-        C_mat <= {C[0], C[1], C[2], C[3], C[4], C[5], C[6], C[7], C[8]};
         flg = 1;
     end
 end
