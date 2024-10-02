@@ -146,14 +146,14 @@ reg [2:0] cycle_index = 0;
 
 reg [31:0] cycles[4:0];
 initial begin
-    cycles[0] = 32'd5000;    // 5%
-    cycles[1] = 32'd25000;   // 25%
-    cycles[2] = 32'd50000;   // 50%
-    cycles[3] = 32'd75000;   // 75%
-    cycles[4] = 32'd100000;  // 100%
+    cycles[0] = 32'd50000;    // 5%
+    cycles[1] = 32'd250000;   // 25%
+    cycles[2] = 32'd500000;   // 50%
+    cycles[3] = 32'd750000;   // 75%
+    cycles[4] = 32'd1000000;  // 100%
 end
 
-reg [31:0] pwm_on_time = 32'd5000;
+reg [31:0] pwm_on_time = 32'd50000;
 
 always @(posedge clk, negedge reset) begin
     if (reset == 0) begin
@@ -161,7 +161,7 @@ always @(posedge clk, negedge reset) begin
         usr_led <= 4'b0000;  
     end
     else begin
-        if (counter < 32'd100000)
+        if (counter < 32'd1000000)
             counter <= counter + 1;
         else
             counter <= 0;
