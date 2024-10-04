@@ -1,0 +1,24 @@
+#-----------------------------------------------------------
+# Vivado v2024.1 (64-bit)
+# SW Build 5076996 on Wed May 22 18:37:14 MDT 2024
+# IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
+# SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
+# Start of session at: Thu Oct  3 14:17:40 2024
+# Process ID: 30968
+# Current directory: F:/Desktop/dlab_course/lab5_for_student/lab5_for_student.runs/synth_1
+# Command line: vivado.exe -log lab5.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source lab5.tcl
+# Log file: F:/Desktop/dlab_course/lab5_for_student/lab5_for_student.runs/synth_1/lab5.vds
+# Journal file: F:/Desktop/dlab_course/lab5_for_student/lab5_for_student.runs/synth_1\vivado.jou
+# Running On        :DESKTOP-QI5ML8H
+# Platform          :Windows Server 2016 or Windows 10
+# Operating System  :19043
+# Processor Detail  :12th Gen Intel(R) Core(TM) i5-12400
+# CPU Frequency     :2496 MHz
+# CPU Physical cores:6
+# CPU Logical cores :12
+# Host memory       :34118 MB
+# Swap memory       :13494 MB
+# Total Virtual     :47612 MB
+# Available Virtual :9228 MB
+#-----------------------------------------------------------
+source lab5.tcl -notrace
