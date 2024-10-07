@@ -1,0 +1,24 @@
+#-----------------------------------------------------------
+# Vivado v2024.1 (64-bit)
+# SW Build 5076996 on Wed May 22 18:37:14 MDT 2024
+# IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
+# SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
+# Start of session at: Tue Oct  8 04:37:32 2024
+# Process ID: 47424
+# Current directory: D:/Coding/vivado-projects/NYCU/DLab/lab05/lab5_for_student.runs/impl_1
+# Command line: vivado.exe -log lab5.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source lab5.tcl -notrace
+# Log file: D:/Coding/vivado-projects/NYCU/DLab/lab05/lab5_for_student.runs/impl_1/lab5.vdi
+# Journal file: D:/Coding/vivado-projects/NYCU/DLab/lab05/lab5_for_student.runs/impl_1\vivado.jou
+# Running On        :DESKTOP-268GC47
+# Platform          :Windows Server 2016 or Windows 10
+# Operating System  :22631
+# Processor Detail  :Intel(R) Core(TM) i7-14700
+# CPU Frequency     :2112 MHz
+# CPU Physical cores:20
+# CPU Logical cores :28
+# Host memory       :68472 MB
+# Swap memory       :10841 MB
+# Total Virtual     :79313 MB
+# Available Virtual :11199 MB
+#-----------------------------------------------------------
+source lab5.tcl -notrace
