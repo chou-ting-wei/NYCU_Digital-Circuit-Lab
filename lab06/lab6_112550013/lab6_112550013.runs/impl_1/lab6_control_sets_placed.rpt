@@ -1,0 +1,103 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.1 (win64) Build 5076996 Wed May 22 18:37:14 MDT 2024
+| Date         : Fri Oct 18 04:37:12 2024
+| Host         : DESKTOP-268GC47 running 64-bit major release  (build 9200)
+| Command      : report_control_sets -verbose -file lab6_control_sets_placed.rpt
+| Design       : lab6
+| Device       : xc7a35ti
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Total control sets                                       |    25 |
+|    Minimum number of control sets                        |    25 |
+|    Addition due to synthesis replication                 |     0 |
+|    Addition due to physical synthesis replication        |     0 |
+| Unused register locations in slices containing registers |    64 |
++----------------------------------------------------------+-------+
+* Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
+** Run report_qor_suggestions for automated merging and remapping suggestions
+
+
+2. Histogram
+------------
+
++--------------------+-------+
+|       Fanout       | Count |
++--------------------+-------+
+| Total control sets |    25 |
+| >= 0 to < 4        |     2 |
+| >= 4 to < 6        |     7 |
+| >= 6 to < 8        |     3 |
+| >= 8 to < 10       |     5 |
+| >= 10 to < 12      |     2 |
+| >= 12 to < 14      |     0 |
+| >= 14 to < 16      |     1 |
+| >= 16              |     5 |
++--------------------+-------+
+* Control sets can be remapped at either synth_design or opt_design
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |              10 |            7 |
+| No           | No                    | Yes                    |               0 |            0 |
+| No           | Yes                   | No                     |              82 |           32 |
+| Yes          | No                    | No                     |              49 |           19 |
+| Yes          | No                    | Yes                    |               0 |            0 |
+| Yes          | Yes                   | No                     |              67 |           20 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++----------------+-----------------------------------+---------------------------------+------------------+----------------+--------------+
+|  Clock Signal  |           Enable Signal           |         Set/Reset Signal        | Slice Load Count | Bel Load Count | Bels / Slice |
++----------------+-----------------------------------+---------------------------------+------------------+----------------+--------------+
+|  clk_IBUF_BUFG | reset_n_IBUF                      |                                 |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG | uart/tx_countdown[3]_i_1_n_0      |                                 |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG |                                   | uart/tx_countdown[3]_i_1_n_0    |                2 |              4 |         2.00 |
+|  clk_IBUF_BUFG | uart/rx_bits_remaining[3]_i_1_n_0 |                                 |                1 |              4 |         4.00 |
+|  clk_IBUF_BUFG | uart/P_reg[0][0]                  | dividend[15]_i_1_n_0            |                1 |              4 |         4.00 |
+|  clk_IBUF_BUFG | uart/P_reg[1][0]                  | divisor[15]_i_1_n_0             |                1 |              4 |         4.00 |
+|  clk_IBUF_BUFG | bit_index[3]_i_2_n_0              | bit_index[3]_i_1_n_0            |                2 |              4 |         2.00 |
+|  clk_IBUF_BUFG |                                   | uart/rx_clk_divider[9]_i_1_n_0  |                2 |              5 |         2.50 |
+|  clk_IBUF_BUFG |                                   | uart/tx_clk_divider[9]_i_1_n_0  |                1 |              5 |         5.00 |
+|  clk_IBUF_BUFG |                                   | uart/rx_countdown[5]_i_1_n_0    |                3 |              6 |         2.00 |
+|  clk_IBUF_BUFG |                                   | uart/tx_clk_divider[10]_i_1_n_0 |                2 |              6 |         3.00 |
+|  clk_IBUF_BUFG |                                   | uart/rx_clk_divider[10]_i_1_n_0 |                3 |              6 |         2.00 |
+|  clk_IBUF_BUFG |                                   | rst0                            |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG |                                   | uart/recv_state_reg[0]_0        |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG | uart/rx_data[7]_i_1_n_0           |                                 |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG | uart/FSM_sequential_Q_reg[0][0]   |                                 |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG | data[100][6]_i_1_n_0              | rst0                            |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG |                                   |                                 |                7 |             10 |         1.43 |
+|  clk_IBUF_BUFG | uart/tx_bits_remaining            |                                 |                5 |             11 |         2.20 |
+|  clk_IBUF_BUFG | remainder[14]_i_2_n_0             | remainder[14]_i_1_n_0           |                4 |             15 |         3.75 |
+|  clk_IBUF_BUFG |                                   | quotient[15]_i_1_n_0            |                8 |             16 |         2.00 |
+|  clk_IBUF_BUFG | uart/P_reg[1]_0[0]                | divisor[15]_i_1_n_0             |                5 |             16 |         3.20 |
+|  clk_IBUF_BUFG | uart/E[0]                         | dividend[15]_i_1_n_0            |                5 |             16 |         3.20 |
+|  clk_IBUF_BUFG | data[100][6]_i_1_n_0              |                                 |                4 |             16 |         4.00 |
+|  clk_IBUF_BUFG |                                   | init_counter[0]_i_1_n_0         |                5 |             18 |         3.60 |
++----------------+-----------------------------------+---------------------------------+------------------+----------------+--------------+
+
+
