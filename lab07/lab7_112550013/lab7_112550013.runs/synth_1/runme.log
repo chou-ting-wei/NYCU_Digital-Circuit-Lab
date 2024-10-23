@@ -1,0 +1,387 @@
+
+*** Running vivado
+    with args -log lab6.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source lab6.tcl
+
+
+
+****** Vivado v2024.1 (64-bit)
+  **** SW Build 5076996 on Wed May 22 18:37:14 MDT 2024
+  **** IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
+  **** SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
+  **** Start of session at: Wed Oct 23 14:48:03 2024
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source lab6.tcl -notrace
+Command: synth_design -top lab6 -part xc7a35ticsg324-1L
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35ti'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35ti'
+INFO: [Device 21-403] Loading part xc7a35ticsg324-1L
+INFO: [Device 21-9227] Part: xc7a35ticsg324-1L does not have CEAM library.
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 30080
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:00 ; elapsed = 00:00:03 . Memory (MB): peak = 1478.961 ; gain = 447.164
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'lab6' [D:/Coding/vivado-projects/NYCU/DLab/lab07/lab_7_for_students/lab_7.srcs/sources_1/lab7.v:24]
+INFO: [Synth 8-6157] synthesizing module 'debounce' [D:/Coding/vivado-projects/NYCU/DLab/lab07/lab_7_for_students/lab_7.srcs/sources_1/debounce.v:21]
+INFO: [Synth 8-6155] done synthesizing module 'debounce' (0#1) [D:/Coding/vivado-projects/NYCU/DLab/lab07/lab_7_for_students/lab_7.srcs/sources_1/debounce.v:21]
+INFO: [Synth 8-6157] synthesizing module 'uart' [D:/Coding/vivado-projects/NYCU/DLab/lab07/lab_7_for_students/lab_7.srcs/sources_1/imports/new/uart.v:31]
+INFO: [Synth 8-6155] done synthesizing module 'uart' (0#1) [D:/Coding/vivado-projects/NYCU/DLab/lab07/lab_7_for_students/lab_7.srcs/sources_1/imports/new/uart.v:31]
+INFO: [Synth 8-6157] synthesizing module 'sram' [D:/Coding/vivado-projects/NYCU/DLab/lab07/lab_7_for_students/lab_7.srcs/sources_1/sram.v:30]
+INFO: [Synth 8-3876] $readmem data file 'matrices.mem' is read successfully [D:/Coding/vivado-projects/NYCU/DLab/lab07/lab_7_for_students/lab_7.srcs/sources_1/sram.v:45]
+INFO: [Synth 8-6155] done synthesizing module 'sram' (0#1) [D:/Coding/vivado-projects/NYCU/DLab/lab07/lab_7_for_students/lab_7.srcs/sources_1/sram.v:30]
+INFO: [Synth 8-6157] synthesizing module 'max_finder_9' [D:/Coding/vivado-projects/NYCU/DLab/lab07/lab_7_for_students/lab_7.srcs/sources_1/lab7.v:669]
+INFO: [Synth 8-6155] done synthesizing module 'max_finder_9' (0#1) [D:/Coding/vivado-projects/NYCU/DLab/lab07/lab_7_for_students/lab_7.srcs/sources_1/lab7.v:669]
+INFO: [Synth 8-6155] done synthesizing module 'lab6' (0#1) [D:/Coding/vivado-projects/NYCU/DLab/lab07/lab_7_for_students/lab_7.srcs/sources_1/lab7.v:24]
+WARNING: [Synth 8-6014] Unused sequential element user_data_reg was removed.  [D:/Coding/vivado-projects/NYCU/DLab/lab07/lab_7_for_students/lab_7.srcs/sources_1/lab7.v:291]
+WARNING: [Synth 8-6014] Unused sequential element sram_col_reg was removed.  [D:/Coding/vivado-projects/NYCU/DLab/lab07/lab_7_for_students/lab_7.srcs/sources_1/lab7.v:358]
+WARNING: [Synth 8-6014] Unused sequential element sram_row_reg was removed.  [D:/Coding/vivado-projects/NYCU/DLab/lab07/lab_7_for_students/lab_7.srcs/sources_1/lab7.v:359]
+WARNING: [Synth 8-6014] Unused sequential element sram_index_reg was removed.  [D:/Coding/vivado-projects/NYCU/DLab/lab07/lab_7_for_students/lab_7.srcs/sources_1/lab7.v:360]
+WARNING: [Synth 8-7137] Register mat_a_pooling_reg in module lab6 has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code 
+WARNING: [Synth 8-7137] Register mat_b_pooling_reg in module lab6 has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code 
+WARNING: [Synth 8-4767] Trying to implement RAM 'mat_a_pooling_reg' in registers. Block RAM or DRAM implementation is not possible; see log for reasons.
+Reason is one or more of the following :
+	1: RAM is sensitive to asynchronous reset signal. this RTL style is not supported. 
+RAM "mat_a_pooling_reg" dissolved into registers
+WARNING: [Synth 8-4767] Trying to implement RAM 'mat_b_pooling_reg' in registers. Block RAM or DRAM implementation is not possible; see log for reasons.
+Reason is one or more of the following :
+	1: RAM is sensitive to asynchronous reset signal. this RTL style is not supported. 
+RAM "mat_b_pooling_reg" dissolved into registers
+WARNING: [Synth 8-3848] Net LCD_RS in module/entity lab6 does not have driver. [D:/Coding/vivado-projects/NYCU/DLab/lab07/lab_7_for_students/lab_7.srcs/sources_1/lab7.v:32]
+WARNING: [Synth 8-3848] Net LCD_RW in module/entity lab6 does not have driver. [D:/Coding/vivado-projects/NYCU/DLab/lab07/lab_7_for_students/lab_7.srcs/sources_1/lab7.v:33]
+WARNING: [Synth 8-3848] Net LCD_E in module/entity lab6 does not have driver. [D:/Coding/vivado-projects/NYCU/DLab/lab07/lab_7_for_students/lab_7.srcs/sources_1/lab7.v:34]
+WARNING: [Synth 8-3848] Net LCD_D in module/entity lab6 does not have driver. [D:/Coding/vivado-projects/NYCU/DLab/lab07/lab_7_for_students/lab_7.srcs/sources_1/lab7.v:35]
+WARNING: [Synth 8-3917] design lab6 has port usr_led[3] driven by constant 0
+WARNING: [Synth 8-3917] design lab6 has port usr_led[2] driven by constant 0
+WARNING: [Synth 8-3917] design lab6 has port usr_led[1] driven by constant 0
+WARNING: [Synth 8-3917] design lab6 has port usr_led[0] driven by constant 0
+WARNING: [Synth 8-7129] Port addr[10] in module sram is either unconnected or has no load
+WARNING: [Synth 8-7129] Port LCD_RS in module lab6 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port LCD_RW in module lab6 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port LCD_E in module lab6 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port LCD_D[3] in module lab6 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port LCD_D[2] in module lab6 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port LCD_D[1] in module lab6 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port LCD_D[0] in module lab6 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port usr_btn[2] in module lab6 is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:00 ; elapsed = 00:00:05 . Memory (MB): peak = 1643.750 ; gain = 611.953
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:00 ; elapsed = 00:00:05 . Memory (MB): peak = 1643.750 ; gain = 611.953
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:00 ; elapsed = 00:00:05 . Memory (MB): peak = 1643.750 ; gain = 611.953
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.033 . Memory (MB): peak = 1643.750 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [D:/Coding/vivado-projects/NYCU/DLab/lab07/lab_7_for_students/lab_7.srcs/constrs_1/lab7.xdc]
+Finished Parsing XDC File [D:/Coding/vivado-projects/NYCU/DLab/lab07/lab_7_for_students/lab_7.srcs/constrs_1/lab7.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [D:/Coding/vivado-projects/NYCU/DLab/lab07/lab_7_for_students/lab_7.srcs/constrs_1/lab7.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/lab6_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/lab6_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1747.941 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.010 . Memory (MB): peak = 1747.941 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:01 ; elapsed = 00:00:10 . Memory (MB): peak = 1747.941 ; gain = 716.145
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a35ticsg324-1L
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:01 ; elapsed = 00:00:10 . Memory (MB): peak = 1747.941 ; gain = 716.145
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:01 ; elapsed = 00:00:10 . Memory (MB): peak = 1747.941 ; gain = 716.145
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'Q_reg' in module 'lab6'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+             S_UART_IDLE |                               00 |                               00
+             S_UART_WAIT |                               01 |                               01
+             S_UART_SEND |                               10 |                               10
+             S_UART_INCR |                               11 |                               11
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'Q_reg' using encoding 'sequential' in module 'lab6'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:01 ; elapsed = 00:00:12 . Memory (MB): peak = 1747.941 ; gain = 716.145
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   11 Bit       Adders := 2     
+	   3 Input   11 Bit       Adders := 5     
+	   2 Input    9 Bit       Adders := 1     
+	   2 Input    7 Bit       Adders := 5     
+	   2 Input    6 Bit       Adders := 13    
+	   2 Input    5 Bit       Adders := 1     
+	   2 Input    4 Bit       Adders := 4     
+	   2 Input    3 Bit       Adders := 6     
++---Registers : 
+	               32 Bit    Registers := 1     
+	               20 Bit    Registers := 25    
+	               18 Bit    Registers := 1     
+	               11 Bit    Registers := 2     
+	                9 Bit    Registers := 53    
+	                8 Bit    Registers := 172   
+	                7 Bit    Registers := 2     
+	                6 Bit    Registers := 5     
+	                4 Bit    Registers := 5     
+	                3 Bit    Registers := 11    
+	                2 Bit    Registers := 2     
+	                1 Bit    Registers := 9     
++---RAMs : 
+	               8K Bit	(1024 X 8 bit)          RAMs := 1     
+	              450 Bit	(50 X 9 bit)          RAMs := 2     
++---Muxes : 
+	   2 Input   32 Bit        Muxes := 8     
+	   3 Input   32 Bit        Muxes := 4     
+	   4 Input   11 Bit        Muxes := 1     
+	   2 Input   11 Bit        Muxes := 4     
+	   8 Input   11 Bit        Muxes := 1     
+	   4 Input    8 Bit        Muxes := 1     
+	   2 Input    8 Bit        Muxes := 1     
+	   6 Input    8 Bit        Muxes := 2     
+	   2 Input    7 Bit        Muxes := 3     
+	   3 Input    6 Bit        Muxes := 1     
+	   2 Input    6 Bit        Muxes := 6     
+	   4 Input    6 Bit        Muxes := 1     
+	   2 Input    5 Bit        Muxes := 1     
+	   4 Input    4 Bit        Muxes := 1     
+	   8 Input    4 Bit        Muxes := 1     
+	   2 Input    4 Bit        Muxes := 6     
+	   3 Input    3 Bit        Muxes := 2     
+	   2 Input    3 Bit        Muxes := 14    
+	   7 Input    2 Bit        Muxes := 1     
+	   2 Input    2 Bit        Muxes := 11    
+	   3 Input    2 Bit        Muxes := 1     
+	   4 Input    2 Bit        Muxes := 3     
+	   4 Input    1 Bit        Muxes := 3     
+	   2 Input    1 Bit        Muxes := 98    
+	   8 Input    1 Bit        Muxes := 2     
+	   6 Input    1 Bit        Muxes := 148   
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 90 (col length:60)
+BRAMs: 100 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+WARNING: [Synth 8-3917] design lab6 has port usr_led[3] driven by constant 0
+WARNING: [Synth 8-3917] design lab6 has port usr_led[2] driven by constant 0
+WARNING: [Synth 8-3917] design lab6 has port usr_led[1] driven by constant 0
+WARNING: [Synth 8-3917] design lab6 has port usr_led[0] driven by constant 0
+WARNING: [Synth 8-7129] Port LCD_RS in module lab6 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port LCD_RW in module lab6 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port LCD_E in module lab6 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port LCD_D[3] in module lab6 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port LCD_D[2] in module lab6 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port LCD_D[1] in module lab6 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port LCD_D[0] in module lab6 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port usr_btn[2] in module lab6 is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:02 ; elapsed = 00:00:22 . Memory (MB): peak = 1747.941 ; gain = 716.145
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Block RAM: Preliminary Mapping Report (see note below)
++------------+--------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|Module Name | RTL Object   | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
++------------+--------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|lab6        | ram0/RAM_reg | 1 K x 8(WRITE_FIRST)   | W | R |                        |   |   | Port A           | 1      | 0      | 
++------------+--------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+
+Note: The table above is a preliminary report that shows the Block RAMs at the current stage of the synthesis flow. Some Block RAMs may be reimplemented as non Block RAM primitives later in the synthesis flow. Multiple instantiated Block RAMs are reported only once. 
+
+Distributed RAM: Preliminary Mapping Report (see note below)
++------------+------------+-----------+----------------------+--------------+
+|Module Name | RTL Object | Inference | Size (Depth x Width) | Primitives   | 
++------------+------------+-----------+----------------------+--------------+
+|lab6        | mat_a_reg  | Implied   | 64 x 8               | RAM64M x 27  | 
+|lab6        | mat_b_reg  | Implied   | 64 x 8               | RAM64M x 27  | 
++------------+------------+-----------+----------------------+--------------+
+
+Note: The table above is a preliminary report that shows the Distributed RAMs at the current stage of the synthesis flow. Some Distributed RAMs may be reimplemented as non Distributed RAM primitives later in the synthesis flow. Multiple instantiated RAMs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:03 ; elapsed = 00:00:26 . Memory (MB): peak = 1747.941 ; gain = 716.145
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:03 ; elapsed = 00:00:32 . Memory (MB): peak = 1832.715 ; gain = 800.918
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Block RAM: Final Mapping Report
++------------+--------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|Module Name | RTL Object   | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
++------------+--------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|lab6        | ram0/RAM_reg | 1 K x 8(WRITE_FIRST)   | W | R |                        |   |   | Port A           | 1      | 0      | 
++------------+--------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+
+
+Distributed RAM: Final Mapping Report
++------------+------------+-----------+----------------------+--------------+
+|Module Name | RTL Object | Inference | Size (Depth x Width) | Primitives   | 
++------------+------------+-----------+----------------------+--------------+
+|lab6        | mat_a_reg  | Implied   | 64 x 8               | RAM64M x 27  | 
+|lab6        | mat_b_reg  | Implied   | 64 x 8               | RAM64M x 27  | 
++------------+------------+-----------+----------------------+--------------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+INFO: [Synth 8-7052] The timing for the instance ram0/RAM_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:03 ; elapsed = 00:00:33 . Memory (MB): peak = 1851.004 ; gain = 819.207
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:03 ; elapsed = 00:00:35 . Memory (MB): peak = 1851.004 ; gain = 819.207
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:03 ; elapsed = 00:00:35 . Memory (MB): peak = 1851.004 ; gain = 819.207
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:03 ; elapsed = 00:00:35 . Memory (MB): peak = 1851.004 ; gain = 819.207
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:03 ; elapsed = 00:00:35 . Memory (MB): peak = 1851.004 ; gain = 819.207
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:36 . Memory (MB): peak = 1851.004 ; gain = 819.207
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:04 ; elapsed = 00:00:36 . Memory (MB): peak = 1851.004 ; gain = 819.207
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+---------+------+
+|      |Cell     |Count |
++------+---------+------+
+|1     |BUFG     |     1|
+|2     |CARRY4   |    63|
+|3     |LUT1     |    16|
+|4     |LUT2     |   141|
+|5     |LUT3     |    84|
+|6     |LUT4     |   325|
+|7     |LUT5     |   240|
+|8     |LUT6     |  1119|
+|9     |MUXF7    |   188|
+|10    |MUXF8    |    75|
+|11    |RAM64M   |    54|
+|12    |RAMB18E1 |     1|
+|13    |FDCE     |    37|
+|14    |FDRE     |  1771|
+|15    |FDSE     |   194|
+|16    |IBUF     |     4|
+|17    |OBUF     |     5|
+|18    |OBUFT    |     7|
++------+---------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:04 ; elapsed = 00:00:36 . Memory (MB): peak = 1851.004 ; gain = 819.207
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 13 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:04 ; elapsed = 00:00:34 . Memory (MB): peak = 1851.004 ; gain = 715.016
+Synthesis Optimization Complete : Time (s): cpu = 00:00:04 ; elapsed = 00:00:36 . Memory (MB): peak = 1851.004 ; gain = 819.207
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.024 . Memory (MB): peak = 1851.004 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 381 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1851.004 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 54 instances were transformed.
+  RAM64M => RAM64M (RAMD64E(x4)): 54 instances
+
+Synth Design complete | Checksum: 27de1c1a
+INFO: [Common 17-83] Releasing license: Synthesis
+30 Infos, 38 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:04 ; elapsed = 00:00:39 . Memory (MB): peak = 1851.004 ; gain = 1219.438
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1851.004 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'D:/Coding/vivado-projects/NYCU/DLab/lab07/lab_7_for_students/lab_7.runs/synth_1/lab6.dcp' has been generated.
+INFO: [Vivado 12-24828] Executing command : report_utilization -file lab6_utilization_synth.rpt -pb lab6_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Wed Oct 23 14:48:49 2024...
