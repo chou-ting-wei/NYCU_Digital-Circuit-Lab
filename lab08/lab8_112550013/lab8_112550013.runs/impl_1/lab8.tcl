@@ -105,7 +105,6 @@ set ACTIVE_STEP init_design
 set rc [catch {
   create_msg_db init_design.pb
   set_param chipscope.maxJobs 7
-  set_param xicom.use_bs_reader 1
   set_param runs.launchOptions { -jobs 28  }
 OPTRACE "create in-memory project" START { }
   create_project -in_memory -part xc7a35ticsg324-1L

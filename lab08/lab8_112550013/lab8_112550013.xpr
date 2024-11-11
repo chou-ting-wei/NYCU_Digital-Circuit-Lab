@@ -7,7 +7,7 @@
 <Project Product="Vivado" Version="7" Minor="67" Path="D:/Coding/GitHub/NYCU_Digital-Circuit-Lab/lab08/lab8_112550013/lab8_112550013.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
-    <Option Name="Id" Val="6131940a80244ea59cd1548118c9ee70"/>
+    <Option Name="Id" Val="723ad9f772d44efc98b74204a8fb10f3"/>
     <Option Name="Part" Val="xc7a35ticsg324-1L"/>
     <Option Name="CompiledLibDir" Val="$PCACHEDIR/compile_simlib"/>
     <Option Name="CompiledLibDirXSim" Val=""/>

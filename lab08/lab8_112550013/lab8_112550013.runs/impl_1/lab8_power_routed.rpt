@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2024.1 (win64) Build 5076996 Wed May 22 18:37:14 MDT 2024
-| Date             : Sat Nov  9 02:01:17 2024
+| Date             : Mon Nov 11 22:04:18 2024
 | Host             : DESKTOP-268GC47 running 64-bit major release  (build 9200)
 | Command          : report_power -file lab8_power_routed.rpt -pb lab8_power_summary_routed.pb -rpx lab8_power_routed.rpx
 | Design           : lab8
@@ -53,13 +53,13 @@ Table of Contents
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
 | Clocks         |     0.009 |        3 |       --- |             --- |
-| Slice Logic    |     0.002 |     8266 |       --- |             --- |
-|   LUT as Logic |     0.002 |     2360 |     20800 |           11.35 |
-|   Register     |    <0.001 |     4721 |     41600 |           11.35 |
+| Slice Logic    |     0.002 |     8260 |       --- |             --- |
+|   LUT as Logic |     0.002 |     2361 |     20800 |           11.35 |
+|   Register     |    <0.001 |     4718 |     41600 |           11.34 |
 |   CARRY4       |    <0.001 |       41 |      8150 |            0.50 |
 |   F7/F8 Muxes  |    <0.001 |      830 |     32600 |            2.55 |
 |   Others       |     0.000 |       11 |       --- |             --- |
-| Signals        |     0.018 |     6193 |       --- |             --- |
+| Signals        |     0.018 |     6178 |       --- |             --- |
 | Block RAM      |     0.001 |      0.5 |        50 |            1.00 |
 | I/O            |     0.010 |       30 |       210 |           14.29 |
 | Static Power   |     0.062 |          |           |                 |
@@ -73,7 +73,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
-| Vccint    |       0.950 |     0.037 |       0.032 |      0.006 |       NA    | Unspecified | NA         |
+| Vccint    |       0.950 |     0.038 |       0.032 |      0.006 |       NA    | Unspecified | NA         |
 | Vccaux    |       1.800 |     0.012 |       0.000 |      0.011 |       NA    | Unspecified | NA         |
 | Vcco33    |       3.300 |     0.004 |       0.003 |      0.001 |       NA    | Unspecified | NA         |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |

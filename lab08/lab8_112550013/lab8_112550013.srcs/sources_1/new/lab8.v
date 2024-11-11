@@ -107,7 +107,7 @@ reg [7:0] DCL_END [0:END_LEN-1];
 reg [9:0] process_counter;
 
 
-reg [7:0] count_R, count_G, count_B, count_Y, count_P, count_X, count_invalid;
+reg [7:0] count_R, count_G, count_B, count_Y, count_P, count_invalid;
 
 // Shift register for LEDs
 reg [7:0] shift_reg [0:3];
@@ -338,7 +338,6 @@ always @(posedge clk) begin
         count_B <= 0;
         count_Y <= 0;
         count_P <= 0;
-        count_X <= 0;
         count_invalid <= 0;
         char_index <= 0;
         for (i = 0; i < 512; i = i + 1)
@@ -386,7 +385,6 @@ always @(posedge clk) begin
                         "B", "b": count_B <= count_B + 1;
                         "Y", "y": count_Y <= count_Y + 1;
                         "P", "p": count_P <= count_P + 1;
-                        "X", "x": count_X <= count_X + 1;
                         default: count_invalid <= count_invalid + 1;
                     endcase
                 end
@@ -476,11 +474,6 @@ generate
                 "P", "p": begin
                     r = 1;
                     g = 0;
-                    b = 1;
-                end
-                "X", "x": begin
-                    r = 1;
-                    g = 1;
                     b = 1;
                 end
                 default: begin
