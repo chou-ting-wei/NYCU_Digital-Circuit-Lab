@@ -21,18 +21,24 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 module lab10(
-    input  clk,
-    input  reset_n,
-    input  [3:0] usr_btn,
-    output [3:0] usr_led,
-    
-    // VGA specific I/O ports
-    output VGA_HSYNC,
-    output VGA_VSYNC,
-    output [3:0] VGA_RED,
-    output [3:0] VGA_GREEN,
-    output [3:0] VGA_BLUE
-    );
+  input  clk,
+  input  reset_n,
+  input  [3:0] usr_btn,
+  output [3:0] usr_led,
+  
+  // VGA specific I/O ports
+  output VGA_HSYNC,
+  output VGA_VSYNC,
+  output [3:0] VGA_RED,
+  output [3:0] VGA_GREEN,
+  output [3:0] VGA_BLUE,
+
+  // 1602 LCD Module Interface
+  output LCD_RS,
+  output LCD_RW,
+  output LCD_E,
+  output [3:0] LCD_D
+);
 
 // Declare system variables
 reg  [35:0] fish1_clock;
@@ -94,15 +100,21 @@ localparam FISH1_W      = 64; // Width of the fish.
 localparam FISH1_H      = 32; // Height of the fish.
 reg [20:0] fish1_addr[0:7];   // Address array for up to 8 fish images.
 
-localparam FISH2_VPOS   = 40; // Vertical location of the fish in the sea image.
-localparam FISH2_W      = 64; // Width of the fish.
-localparam FISH2_H      = 44; // Height of the fish.
-reg [20:0] fish2_addr[0:3];   // Address array for up to 4 fish images.
+localparam FISH2_VPOS   = 40;
+localparam FISH2_W      = 64;
+localparam FISH2_H      = 44;
+reg [20:0] fish2_addr[0:3];
 
-localparam FISH3_VPOS   = 128; // Vertical location of the fish in the sea image.
-localparam FISH3_W      = 64; // Width of the fish.
-localparam FISH3_H      = 72; // Height of the fish.
-reg [20:0] fish3_addr[0:3];   // Address array for up to 4 fish images.
+localparam FISH3_VPOS   = 128;
+localparam FISH3_W      = 64;
+localparam FISH3_H      = 72;
+reg [20:0] fish3_addr[0:3];
+
+wire [3:0]  btn_level, btn_pressed;
+reg  [3:0]  prev_btn_level;
+
+reg  [127:0] row_A = "SD card cannot  ";
+reg  [127:0] row_B = "be initialized! ";
 
 // Initializes the fish images starting addresses.
 // Note: System Verilog has an easier way to initialize an array,
@@ -130,6 +142,50 @@ clk_divider#(2) clk_divider0(
   .reset(~reset_n),
   .clk_out(vga_clk)
 );
+
+debounce btn_db0(
+  .clk(clk),
+  .btn_input(usr_btn[0]),
+  .btn_output(btn_level[0])
+);
+
+debounce btn_db1(
+  .clk(clk),
+  .btn_input(usr_btn[1]),
+  .btn_output(btn_level[1])
+);
+
+debounce btn_db2(
+  .clk(clk),
+  .btn_input(usr_btn[2]),
+  .btn_output(btn_level[2])
+);
+
+debounce btn_db3(
+  .clk(clk),
+  .btn_input(usr_btn[3]),
+  .btn_output(btn_level[3])
+);
+
+LCD_module lcd0( 
+  .clk(clk),
+  .reset(~reset_n),
+  .row_A(row_A),
+  .row_B(row_B),
+  .LCD_E(LCD_E),
+  .LCD_RS(LCD_RS),
+  .LCD_RW(LCD_RW),
+  .LCD_D(LCD_D)
+);
+
+always @(posedge clk) begin
+    if (~reset_n)
+        prev_btn_level <= 0;
+    else
+        prev_btn_level <= btn_level;
+end
+
+assign btn_pressed = (btn_level == 1 && prev_btn_level == 0)? 1 : 0;
 
 // ------------------------------------------------------------------------
 // The following code describes an initialized SRAM memory block that
@@ -178,7 +234,7 @@ assign fish1_pos = fish1_clock[33:22];
 assign fish2_pos = fish2_clock[31:20];
 assign fish3_pos = fish3_clock[30:19];
 
-// Direction registers: 0 = left, 1 = right
+// Direction: 0 = left, 1 = right
 reg fish1_dir;
 reg fish2_dir;
 reg fish3_dir;
@@ -192,24 +248,21 @@ always @(posedge clk) begin
     fish2_dir <= 1;
     fish3_dir <= 1;
   end else begin
-    // Update fish1
     if (fish1_dir) begin
       if (fish1_clock[33:23] < VBUF_W)
         fish1_clock <= fish1_clock + 1;
       else begin
-        fish1_dir <= 0; // Change direction to left
+        fish1_dir <= 0;
         fish1_clock <= fish1_clock - 1;
       end
     end else begin
       if (fish1_clock[33:23] > FISH1_W)
         fish1_clock <= fish1_clock - 1;
       else begin
-        fish1_dir <= 1; // Change direction to right
+        fish1_dir <= 1;
         fish1_clock <= fish1_clock + 1;
       end
     end
-
-    // Update fish2
     if (fish2_dir) begin
       if (fish2_clock[31:21] < VBUF_W)
         fish2_clock <= fish2_clock + 1;
@@ -225,8 +278,6 @@ always @(posedge clk) begin
         fish2_clock <= fish2_clock + 1;
       end
     end
-
-    // Update fish3
     if (fish3_dir) begin
       if (fish3_clock[30:20] < VBUF_W)
         fish3_clock <= fish3_clock + 1;
@@ -282,9 +333,6 @@ always @ (posedge clk) begin
                     ((pixel_y >> 1) - FISH1_VPOS) * FISH1_W +
                     (FISH1_W - ((pixel_x +(FISH1_W*2-1)-fish1_pos)>>1) - 1);
   end
-    // pixel_f1_addr <= fish1_addr[fish1_clock[25:23]] +
-    //               ((pixel_y>>1)-FISH1_VPOS)*FISH1_W +
-    //               ((pixel_x +(FISH1_W*2-1)-fish1_pos)>>1);
   if (fish2_region) begin
     if (fish2_dir)
       pixel_f2_addr <= fish2_addr[fish2_clock[25:24]] +
@@ -294,9 +342,6 @@ always @ (posedge clk) begin
       pixel_f2_addr <= fish2_addr[fish2_clock[25:24]] +
                     ((pixel_y >> 1) - FISH2_VPOS) * FISH2_W +
                     (FISH2_W - ((pixel_x +(FISH2_W*2-1)-fish2_pos)>>1) - 1);
-    // pixel_f2_addr <= fish2_addr[fish2_clock[25:24]] +
-    //               ((pixel_y>>1)-FISH2_VPOS)*FISH2_W +
-    //               ((pixel_x +(FISH2_W*2-1)-fish2_pos)>>1);
   end
   if (fish3_region) begin
     if (~fish3_dir)
@@ -308,13 +353,6 @@ always @ (posedge clk) begin
                     ((pixel_y >> 1) - FISH3_VPOS) * FISH3_W +
                     (FISH3_W - ((pixel_x +(FISH3_W*2-1)-fish3_pos)>>1) - 1);
   end
-    // pixel_f3_addr <= fish3_addr[fish3_clock[25:24]] +
-    //               ((pixel_y>>1)-FISH3_VPOS)*FISH3_W +
-    //               ((pixel_x +(FISH3_W*2-1)-fish3_pos)>>1);
-  // else
-    // Scale up a 320x240 image for the 640x480 display.
-    // (pixel_x, pixel_y) ranges from (0,0) to (639, 479)
-    // pixel_bg_addr <= (pixel_y >> 1) * VBUF_W + (pixel_x >> 1);
 end
 
 always @ (posedge clk) begin
