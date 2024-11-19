@@ -1,0 +1,24 @@
+#-----------------------------------------------------------
+# Vivado v2024.2 (64-bit)
+# SW Build 5239630 on Fri Nov 08 22:35:27 MST 2024
+# IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
+# SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
+# Start of session at: Wed Nov 20 03:39:14 2024
+# Process ID         : 40404
+# Current directory  : D:/Coding/vivado-projects/NYCU/DLab/lab10_new/lab10/lab10.runs/synth_1
+# Command line       : vivado.exe -log lab10.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source lab10.tcl
+# Log file           : D:/Coding/vivado-projects/NYCU/DLab/lab10_new/lab10/lab10.runs/synth_1/lab10.vds
+# Journal file       : D:/Coding/vivado-projects/NYCU/DLab/lab10_new/lab10/lab10.runs/synth_1\vivado.jou
+# Running On         : DESKTOP-268GC47
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 22631
+# Processor Detail   : Intel(R) Core(TM) i7-14700
+# CPU Frequency      : 2112 MHz
+# CPU Physical cores : 20
+# CPU Logical cores  : 28
+# Host memory        : 68475 MB
+# Swap memory        : 8726 MB
+# Total Virtual      : 77201 MB
+# Available Virtual  : 20462 MB
+#-----------------------------------------------------------
+source lab10.tcl -notrace
