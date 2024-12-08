@@ -16,5 +16,5 @@
 - lab10: VGA Graphic Display
 
 ## Final Project
-- Topic: Vending Machine
+- Topic: Vending Machine Design
 - GitHub: https://github.com/chou-ting-wei/NYCU_Digital-Circuit-Lab
