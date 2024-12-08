@@ -1,0 +1,14 @@
++====================+===================+=========================+
+| Launch Setup Clock | Launch Hold Clock | Pin                     |
++====================+===================+=========================+
+| sys_clk_pin        | sys_clk_pin       | refund_valid_reg[0]/D   |
+| sys_clk_pin        | sys_clk_pin       | refund_valid_reg[1]/D   |
+| sys_clk_pin        | sys_clk_pin       | mach_coin_one_reg[2]/D  |
+| sys_clk_pin        | sys_clk_pin       | coin_one_reg[2]/D       |
+| sys_clk_pin        | sys_clk_pin       | mach_coin_one_reg[0]/D  |
+| sys_clk_pin        | sys_clk_pin       | mach_coin_five_reg[3]/D |
+| sys_clk_pin        | sys_clk_pin       | coin_five_reg[3]/D      |
+| sys_clk_pin        | sys_clk_pin       | mach_coin_five_reg[2]/D |
+| sys_clk_pin        | sys_clk_pin       | mach_coin_five_reg[1]/D |
+| sys_clk_pin        | sys_clk_pin       | coin_five_reg[1]/D      |
++--------------------+-------------------+-------------------------+
