@@ -17,4 +17,4 @@
 
 ## Final Project
 - Topic: Vending Machine Design
-- GitHub: https://github.com/chou-ting-wei/NYCU_Digital-Circuit-Lab
+- GitHub: https://github.com/chou-ting-wei/NYCU_DCL-Final-Project
