@@ -3,7 +3,7 @@
 
 **本Repo提供為參考用途，不保證資料正確性，切勿直接抄襲。**
 
-## Homework
+## Lab
 - lab01: Sequential Multiplier
 - lab02: Matrix Multiplication Simulation
 - lab03: Simple ALU
